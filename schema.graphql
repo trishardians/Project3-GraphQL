@@ -1,0 +1,25 @@
+type Berita {
+	id: Int
+	urlGambar: String
+	judulBerita: String
+	isiBerita1: String
+	isiBerita2: String
+	isiBerita3: String
+}
+
+type Comment {
+	newsid: Int
+	comment: String
+}
+
+type Query {
+	news: [Berita]
+	comment: [Comment]
+}
+type Mutation {
+	createNews(urlGambar: String, judulBerita: String, isiBerita1:String , isiBerita2: String, isiBerita3: String): Berita,
+	getNews(id: Int): Berita,
+	updateNews(id: Int, urlGambar: String, judulBerita: String, isiBerita1:String , isiBerita2: String, isiBerita3: String): Berita,
+	deleteNews(id: Int): Berita,
+	createComment(newsid: Int, comment: String): Comment,
+}
